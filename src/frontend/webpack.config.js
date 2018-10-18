@@ -9,7 +9,7 @@ module.exports = {
     },
     mode : 'development',
     devServer: {
-        contentBase : path.join(__dirname, '/src'),
+        contentBase : path.join(__dirname, '/'),
         port : 3000,
         //inline: true,
         //hot: true
@@ -61,21 +61,13 @@ module.exports = {
                 //loader: "style-loader!css-loader!autoprefixer-loader!less-loader",
                 exclude: [/node_modules/, /public/]
             },
+            
             {
-                test: /\.gif$/,
-                loader: "url-loader?limit=10000&mimetype=image/gif"
-            },
-            {
-                test: /\.jpg$/,
-                loader: "url-loader?limit=10000&mimetype=image/jpg"
-            },
-            {
-                test: /\.png$/,
-                loader: "url-loader?limit=10000&mimetype=image/png"
-            },
-            {
-                test: /\.svg/,
-                loader: "url-loader?limit=26000&mimetype=image/svg+xml"
+                test: /\.(jpe?g|gif|png|svg)$/,
+                use:[
+                    {loader : 'file-loader'},
+                    {loader: "url-loader"}
+                ]
             },
             {
                 test: /\.json$/,

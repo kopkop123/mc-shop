@@ -1,8 +1,9 @@
 import React from "react"
 import {render} from "react-dom"
-
+import App from "./src/App.js"
+console.log(<div>hello </div>)
 render(
-    <div>hello </div>,
+    <App/>,
     document.querySelector("#root")
 )
 
