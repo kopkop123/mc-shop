@@ -26,20 +26,39 @@ module.exports = {
                             ["transform-react-jsx"],
                             ["transform-class-properties"]
                         ]
-                    }
-                    
+                    }    
                 },
                 
                 exclude: [/node_modules/, /public/],   
             },
             {
+                test: /.\sass$/,
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'auto-prefixer'},
+                    {loader: 'sass-loader'}
+                ]
+            },
+            {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader",
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'auto-prefixer'}
+                ],
+                //loader: "style-loader!css-loader!autoprefixer-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
                 test: /\.less$/,
-                loader: "style-loader!css-loader!autoprefixer-loader!less-loader",
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'auto-prefixer'},
+                    {loader: 'less-loader'}
+                ],
+                //loader: "style-loader!css-loader!autoprefixer-loader!less-loader",
                 exclude: [/node_modules/, /public/]
             },
             {
