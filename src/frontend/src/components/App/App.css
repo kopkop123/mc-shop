@@ -1,0 +1,293 @@
+body {
+  background-color: #faf8e8;
+  margin: 0;
+  padding: 0;
+  color: #684f40;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  flex: none;
+}
+
+.container {
+  padding: 0 15px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.header {
+
+}
+
+.header__inner {
+
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 130px;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.service-navigation {
+  position: relative;
+  display: flex;
+}
+
+.service-navigation__link {
+  margin-left: 20px;
+  color: #b38a68;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.service-navigation__link::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  margin-right: 5px;
+}
+
+.service-navigation__link:hover {
+  color: #9c7351;
+}
+
+.service-navigation--show-search {
+  visibility: hidden;
+}
+
+.service-navigation--show-search .service-navigation__form {
+  visibility: visible;
+  z-index: 100;
+}
+
+.service-navigation__form {
+  background-color: #faf8e8;
+  border: 1px solid #e3d1c3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 31px;
+  min-width: 250px;
+  display: flex;
+  padding: 8px 8px 8px 12px;
+  visibility: hidden;
+  z-index: -100;
+}
+
+.service-navigation__input {
+  color: #bfb4a4;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  flex: 1;
+  font-size: 12px;
+}
+
+.service-navigation__submit {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navigation {
+  border-top: 1px solid #e3d1c3;
+}
+
+.navigation__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__list-item {
+  position: relative;
+}
+
+.navigation__list-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  right: 0;
+  width: 1px;
+  background-color: #ebded4;
+}
+
+.navigation__link {
+  text-transform: uppercase;
+  color: #8a6f65;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 25px;
+  display: block;
+}
+
+.navigation__link:hover {
+  color: #564139;
+}
+
+.navigation__list-item--dropdown:hover::after {
+  background-color: transparent;
+}
+
+.navigation__list-item--dropdown:hover .navigation__link {
+  color: #fff;
+  background-color: #6b5249;
+}
+
+.navigation__link:hover + .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 200;
+  border: 1px solid rgba(255, 255, 255, .15);
+  background-color: #6b5249;
+  min-width: 200px;
+}
+
+.dropdown-menu:hover {
+  display: block;
+}
+
+.dropdown-menu__item:not(:first-child) {
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-menu__link {
+  font-size: 14px;
+  padding: 23px 42px 23px 26px;
+  color: rgba(255, 255, 255, .7);
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu__link:hover {
+  color: #fff;
+}
+
+.footer {
+
+}
+
+.footer__inner {
+
+}
+
+.footer__info {
+  margin-top: 50px;
+  display: flex;
+  border-top: 1px solid #e3d1c3;
+  border-bottom: 1px solid #e3d1c3;
+  text-align: center;
+  min-height: 185px;
+}
+
+.footer__item {
+  padding-top: 40px;
+  flex: 1;
+}
+
+.footer__item:not(:first-child) {
+  border-left: 1px solid #e3d1c3;
+}
+
+.footer__title {
+  font-size: 14px;
+  color: #bfb4a4;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.footer__contact {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.footer__link {
+  color: #bfb4a4;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: #afa391;
+}
+
+.footer__link + .footer__link {
+  margin-left: 16px;
+}
+
+.footer__link--bottom + .footer__link--bottom {
+  margin-left: 20px;
+}
+
+.footer__form {
+  display: flex;
+  width: 75%;
+  margin: auto;
+}
+
+.footer__input {
+  padding: 8px 0 8px 8px;
+  flex: 1;
+  background: transparent;
+  font-size: 12px;
+  color: #bfb4a4;
+  outline: 0;
+  border: 1px solid #e3d1c3;
+}
+
+.footer__submit {
+  width: 65px;
+  background: #bfb4a4;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #faf8e8;
+  text-transform: uppercase;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.footer__submit:hover {
+  background: #afa391;
+}
+
+.footer__navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.footer__payment {
+  display: flex;
+  justify-content: center;
+  color: #bfb4a4;
+  margin: 20px 0;
+}
+
+.footer__payment span {
+  margin: 0 10px;
+}
