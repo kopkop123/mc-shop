@@ -14,7 +14,9 @@ module.exports = {
         //inline: true,
         //hot: true
     },
-    
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     module: {
         rules: [
             {
@@ -26,10 +28,9 @@ module.exports = {
                             ["transform-react-jsx"],
                             ["transform-class-properties"]
                         ]
-                    }    
+                    }
                 },
-                
-                exclude: [/node_modules/, /public/],   
+                exclude: [/node_modules/, /public/],
             },
             {
                 test: /.\sass$/,
@@ -61,12 +62,11 @@ module.exports = {
                 //loader: "style-loader!css-loader!autoprefixer-loader!less-loader",
                 exclude: [/node_modules/, /public/]
             },
-            
+
             {
                 test: /\.(jpe?g|gif|png|svg)$/,
                 use:[
-                    {loader : 'file-loader'},
-                    {loader: "url-loader"}
+                    {loader : 'file-loader'}
                 ]
             },
             {

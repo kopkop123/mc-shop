@@ -1,13 +1,38 @@
 import React, { Component } from 'react'
-import classes from './App.css'
+import classes from './App.less'
+import logo from './img/logo.png'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+library.add(faSearch)
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+library.add(faShoppingCart)
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+library.add(faUser)
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+library.add(faChevronDown)
 
 class App extends Component {
 
-    showSearchField = () => {
-        let navigation = document.querySelector('.service-navigation')
-        if(!navigation.classList.contains('service-navigation--show-search')) {
-            navigation.classList.add('service-navigation--show-search')
-        }
+    state = {
+        showSearch: false
+    }
+
+    showSearchField = (e) => {
+        e.preventDefault();
+
+        this.setState(Object.assign({}, this.state, {
+            showSearch: true
+        }))
+    }
+
+    componentDidMount() {
+        document.body.addEventListener('click', () => {
+            this.setState(Object.assign({}, this.state, {
+                showSearch: false
+            }))
+        })
     }
 
     render() {
@@ -16,16 +41,16 @@ class App extends Component {
                 <header className="header">
                     <div className="header__inner container">
                         <div className="header__top">
-                            <a href="#"><img className='header__logo' src="//cdn.shopify.com/s/files/1/1208/1394/t/3/assets/logo.png?4013973046577629092" alt="Logo"/></a>
+                            <a href="#"><img className='header__logo' src={logo} alt="Logo"/></a>
 
-                            <nav className="service-navigation">
-                                <form className="service-navigation__form">
+                            <nav className={`service-navigation ${this.state.showSearch ? "service-navigation--show-search" : ""}`}>
+                                <form className="service-navigation__form" onClick={this.showSearchField}>
                                     <input type="text" className="service-navigation__input" placeholder="Search" />
                                     <input type="submit" className="service-navigation__submit" value="S" />
                                 </form>
-                                <a href="#" className="service-navigation__link" onClick={this.showSearchField}>Search</a>
-                                <a href="#" className="service-navigation__link">0 items</a>
-                                <a href="#" className="service-navigation__link">Login</a>
+                                <a href="#" className="service-navigation__link" onClick={this.showSearchField}><FontAwesomeIcon icon="search" /> Search</a>
+                                <a href="#" className="service-navigation__link"><FontAwesomeIcon icon="shopping-cart" />0 items</a>
+                                <a href="#" className="service-navigation__link"><FontAwesomeIcon icon="user" />Login</a>
                             </nav>
                         </div>
 
@@ -35,7 +60,7 @@ class App extends Component {
                                     <a href="#" className="navigation__link">Home</a>
                                 </li>
                                 <li className="navigation__list-item navigation__list-item--dropdown">
-                                    <a href="#" className="navigation__link">Eat</a>
+                                    <a href="#" className="navigation__link">Eat <FontAwesomeIcon icon="chevron-down" /></a>
 
                                     <ul className="dropdown-menu">
                                         <li className="dropdown-menu__item">
@@ -53,7 +78,7 @@ class App extends Component {
                                     </ul>
                                 </li>
                                 <li className="navigation__list-item navigation__list-item--dropdown">
-                                    <a href="#" className="navigation__link">Drink</a>
+                                    <a href="#" className="navigation__link">Drink <FontAwesomeIcon icon="chevron-down" /></a>
 
                                     <ul className="dropdown-menu">
                                         <li className="dropdown-menu__item">
@@ -71,7 +96,7 @@ class App extends Component {
                                     <a href="#" className="navigation__link">Wholesale</a>
                                 </li>
                                 <li className="navigation__list-item navigation__list-item--dropdown">
-                                    <a href="#" className="navigation__link">About Us</a>
+                                    <a href="#" className="navigation__link">About Us <FontAwesomeIcon icon="chevron-down" /></a>
 
                                     <ul className="dropdown-menu">
                                         <li className="dropdown-menu__item">
