@@ -155,11 +155,11 @@ class App extends Component {
                                 <h3 className="footer__title">Follow us out there</h3>
 
                                 <div className="footer__social">
-                                    <a href="#" className="footer__link">Tw</a>
-                                    <a href="#" className="footer__link">Fb</a>
-                                    <a href="#" className="footer__link">P</a>
-                                    <a href="#" className="footer__link">G+</a>
-                                    <a href="#" className="footer__link">In</a>
+                                    <a href="#" className="footer__link"><i className="fab fa-twitter"></i></a>
+                                    <a href="#" className="footer__link"><i className="fab fa-facebook-square"></i></a>
+                                    <a href="#" className="footer__link"><i className="fab fa-pinterest"></i></a>
+                                    <a href="#" className="footer__link"><i className="fab fa-google-plus-g"></i></a>
+                                    <a href="#" className="footer__link"><i className="fab fa-instagram"></i></a>
                                 </div>
                             </div>
 
@@ -181,9 +181,10 @@ class App extends Component {
                         </nav>
 
                         <div className="footer__payment">
-                            <span>MasterCard</span>
-                            <span>PayPal</span>
-                            <span>Visa</span>
+                            <span><i className="fab fa-cc-amex"></i></span>
+                            <span><i className="fab fa-cc-mastercard"></i></span>
+                            <span><i className="fab fa-paypal"></i></span>
+                            <span><i className="fab fa-cc-visa"></i></span>
                         </div>
                     </div>
                 </footer>
