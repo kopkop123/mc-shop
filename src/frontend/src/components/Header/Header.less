@@ -1,0 +1,168 @@
+.header {
+
+}
+
+.header__inner {
+
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 130px;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.service-navigation {
+  position: relative;
+  display: flex;
+}
+
+.service-navigation__link {
+  margin-left: 20px;
+  color: #b38a68;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.service-navigation__link svg {
+  margin-right: 6px;
+}
+
+.service-navigation__link:hover {
+  color: #9c7351;
+}
+
+.service-navigation--show-search {
+  visibility: hidden;
+}
+
+.service-navigation--show-search .service-navigation__form {
+  visibility: visible;
+  z-index: 100;
+}
+
+.service-navigation__form {
+  background-color: #faf8e8;
+  border: 1px solid #e3d1c3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 31px;
+  min-width: 250px;
+  display: flex;
+  padding: 8px 8px 8px 12px;
+  visibility: hidden;
+  z-index: -100;
+}
+
+.service-navigation__input {
+  color: #bfb4a4;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  flex: 1;
+  font-size: 12px;
+}
+
+.service-navigation__submit {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #e3d1c3;
+  outline: 0;
+}
+
+.navigation {
+  border-top: 1px solid #e3d1c3;
+}
+
+.navigation__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__list-item {
+  position: relative;
+}
+
+.navigation__list-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  right: 0;
+  width: 1px;
+  background-color: #ebded4;
+}
+
+.navigation__link {
+  text-transform: uppercase;
+  color: #8a6f65;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 25px;
+  display: block;
+
+  svg {
+    margin-left: 6px;
+  }
+}
+
+.navigation__link:hover {
+  color: #564139;
+}
+
+.navigation__list-item--dropdown:hover::after {
+  background-color: transparent;
+}
+
+.navigation__list-item--dropdown:hover .navigation__link {
+  color: #fff;
+  background-color: #6b5249;
+}
+
+.navigation__link:hover + .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 200;
+  border: 1px solid rgba(255, 255, 255, .15);
+  background-color: #6b5249;
+  min-width: 200px;
+}
+
+.dropdown-menu:hover {
+  display: block;
+}
+
+.dropdown-menu__item:not(:first-child) {
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-menu__link {
+  font-size: 14px;
+  padding: 23px 42px 23px 26px;
+  color: rgba(255, 255, 255, .7);
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu__link:hover {
+  color: #fff;
+}
