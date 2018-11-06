@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {NavLink} from 'react-router-dom'
 
 class Login extends Component {
     state = {
@@ -60,7 +61,7 @@ class Login extends Component {
                 </form>
 
                 <div className="page__bottom">
-                    New customer? <a href="#">Sign up for an account</a>
+                    New customer? <NavLink to="/register">Sign up for an account</NavLink>
                 </div>
             </React.Fragment>
         )

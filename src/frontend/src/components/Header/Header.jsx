@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import classes from './Header.less'
+import {NavLink} from 'react-router-dom'
 import logo from './img/logo.png'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -38,7 +39,7 @@ class Header extends Component {
             <header className="header">
                 <div className="header__inner container">
                     <div className="header__top">
-                        <a href="#"><img className='header__logo' src={logo} alt="Logo"/></a>
+                        <NavLink to="/" exact><img className='header__logo' src={logo} alt="Logo"/></NavLink>
 
                         <nav className={`service-navigation ${this.state.showSearch ? "service-navigation--show-search" : ""}`}>
                             <form className="service-navigation__form" onClick={this.showSearchField}>
@@ -47,14 +48,14 @@ class Header extends Component {
                             </form>
                             <a href="#" className="service-navigation__link" onClick={this.showSearchField}><FontAwesomeIcon icon="search" /> Search</a>
                             <a href="#" className="service-navigation__link"><FontAwesomeIcon icon="shopping-cart" />0 items</a>
-                            <a href="#" className="service-navigation__link"><FontAwesomeIcon icon="user" />Login</a>
+                            <NavLink to="/login" className="service-navigation__link"><FontAwesomeIcon icon="user" />Login</NavLink>
                         </nav>
                     </div>
 
                     <nav className="navigation">
                         <ul className="navigation__list">
                             <li className="navigation__list-item">
-                                <a href="#" className="navigation__link">Home</a>
+                                <NavLink to="/" exact className="navigation__link">Home</NavLink>
                             </li>
                             <li className="navigation__list-item navigation__list-item--dropdown">
                                 <a href="#" className="navigation__link">Eat <FontAwesomeIcon icon="chevron-down" /></a>
