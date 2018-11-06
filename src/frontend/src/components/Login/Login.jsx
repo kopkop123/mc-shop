@@ -31,39 +31,45 @@ class Login extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <form className="form" onSubmit={this.onFormSubmit}>
-                    <label className="form__row">
-                        <span className="form__label">Email</span>
-                        <input
-                            className="form__input"
-                            type="email"
-                            name="email"
-                            placeholder="your@email.com"
-                            onChange={this.onFieldChange}
-                        />
-                    </label>
+            <div className="container">
+                <div className="page">
+                    <h2 className="page__title">Customer Login</h2>
 
-                    <label className="form__row">
-                        <span className="form__label">Password</span>
-                        <input
-                            className="form__input"
-                            type="password"
-                            name="password"
-                            onChange={this.onFieldChange}
-                        />
-                    </label>
+                    <div className="page__wrap">
+                        <form className="form" onSubmit={this.onFormSubmit}>
+                            <label className="form__row">
+                                <span className="form__label">Email</span>
+                                <input
+                                    className="form__input"
+                                    type="email"
+                                    name="email"
+                                    placeholder="your@email.com"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
 
-                    <div className="form__bottom">
-                        <input className="form__submit" type="submit" value="Submit" />
-                        <a href="#" className="form__link">Forgot your password?</a>
+                            <label className="form__row">
+                                <span className="form__label">Password</span>
+                                <input
+                                    className="form__input"
+                                    type="password"
+                                    name="password"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
+
+                            <div className="form__bottom">
+                                <input className="form__submit" type="submit" value="Submit" />
+                                <a href="#" className="form__link">Forgot your password?</a>
+                            </div>
+                        </form>
+
+                        <div className="page__bottom">
+                            New customer? <NavLink to="/register">Sign up for an account</NavLink>
+                        </div>
                     </div>
-                </form>
-
-                <div className="page__bottom">
-                    New customer? <NavLink to="/register">Sign up for an account</NavLink>
                 </div>
-            </React.Fragment>
+            </div>
         )
     }
 }

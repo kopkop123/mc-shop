@@ -34,72 +34,80 @@ class SignUp extends Component {
 
     render() {
         return (
-            <form className="form" onSubmit={this.onFormSubmit}>
-                <label className="form__row">
-                    <span className="form__label">Email</span>
-                    <input
-                        className="form__input"
-                        type="email"
-                        name="email"
-                        placeholder="your@email.com"
-                        onChange={this.onFieldChange}
-                    />
-                </label>
+            <div className="container">
+                <div className="page">
+                    <h2 className="page__title">Sign up</h2>
 
-                <label className="form__row">
-                    <span className="form__label">Password</span>
-                    <input
-                        className="form__input"
-                        type="password"
-                        name="password"
-                        onChange={this.onFieldChange}
-                    />
-                </label>
+                    <div className="page__wrap">
+                        <form className="form" onSubmit={this.onFormSubmit}>
+                            <label className="form__row">
+                                <span className="form__label">Email</span>
+                                <input
+                                    className="form__input"
+                                    type="email"
+                                    name="email"
+                                    placeholder="your@email.com"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
 
-                <label className="form__row">
-                    <span className="form__label">Confirm password</span>
-                    <input
-                        className="form__input"
-                        type="password"
-                        name="confirm"
-                        onChange={this.onFieldChange}
-                    />
-                </label>
+                            <label className="form__row">
+                                <span className="form__label">Password</span>
+                                <input
+                                    className="form__input"
+                                    type="password"
+                                    name="password"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
 
-                <label className="form__row">
-                    <span className="form__label">Phone</span>
-                    <input
-                        className="form__input"
-                        type="tel"
-                        name="phone"
-                        onChange={this.onFieldChange}
-                    />
-                </label>
+                            <label className="form__row">
+                                <span className="form__label">Confirm password</span>
+                                <input
+                                    className="form__input"
+                                    type="password"
+                                    name="confirm"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
 
-                <label className="form__row">
-                    <span className="form__label">First Name</span>
-                    <input
-                        className="form__input"
-                        type="text"
-                        name="firstname"
-                        onChange={this.onFieldChange}
-                    />
-                </label>
+                            <label className="form__row">
+                                <span className="form__label">Phone</span>
+                                <input
+                                    className="form__input"
+                                    type="tel"
+                                    name="phone"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
 
-                <label className="form__row">
-                    <span className="form__label">Last Name</span>
-                    <input
-                        className="form__input"
-                        type="text"
-                        name="lastname"
-                        onChange={this.onFieldChange}
-                    />
-                </label>
+                            <label className="form__row">
+                                <span className="form__label">First Name</span>
+                                <input
+                                    className="form__input"
+                                    type="text"
+                                    name="firstname"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
 
-                <div className="form__bottom">
-                    <input className="form__submit" type="submit" value="Submit" />
+                            <label className="form__row">
+                                <span className="form__label">Last Name</span>
+                                <input
+                                    className="form__input"
+                                    type="text"
+                                    name="lastname"
+                                    onChange={this.onFieldChange}
+                                />
+                            </label>
+
+                            <div className="form__bottom">
+                                <input className="form__submit" type="submit" value="Submit" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
+            </div>
         )
     }
 }
