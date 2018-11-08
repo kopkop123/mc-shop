@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import Login from '../Login/Login'
 import SignUp from '../SignUp/SignUp'
 import Home from '../Home/Home'
+import Product from  '../Admin/Product/Product'
 
 class Main extends Component {
     render() {
@@ -13,6 +14,7 @@ class Main extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={SignUp} />
+                    <Route path="/admin/product" component={Product} />
                 </Switch>
             </React.Fragment>
         )

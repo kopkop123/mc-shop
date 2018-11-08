@@ -49,6 +49,7 @@ class Header extends Component {
                             <a href="#" className="service-navigation__link" onClick={this.showSearchField}><FontAwesomeIcon icon="search" /> Search</a>
                             <a href="#" className="service-navigation__link"><FontAwesomeIcon icon="shopping-cart" />0 items</a>
                             <NavLink to="/login" className="service-navigation__link"><FontAwesomeIcon icon="user" />Login</NavLink>
+                            <NavLink to="/admin/product" className="service-navigation__link">Product</NavLink>
                         </nav>
                     </div>
 
