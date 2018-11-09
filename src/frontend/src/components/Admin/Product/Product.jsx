@@ -2,14 +2,6 @@ import React, {Component} from 'react'
 import DropzoneComponent from 'react-dropzone-component';
 
 class Product extends Component {
-    // state = {
-    //     name: '',
-    //     category: '',
-    //     price: '',
-    //     description: '',
-    //     pictures: [{}]
-    // }
-
     state = {
         name: '',
         price: '',
@@ -41,7 +33,7 @@ class Product extends Component {
     componentConfig = {
         iconFiletypes: ['.jpg', '.png', '.gif'],
         showFiletypeIcon: false,
-        postUrl: '/uploadHandler'
+        postUrl: 'https://photosp.ru/api/1/upload/'
     }
 
     render() {
@@ -67,6 +59,7 @@ class Product extends Component {
                                 <select name="category" className="form__input">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
+                                    <option value="3">3</option>
                                 </select>
                             </label>
 

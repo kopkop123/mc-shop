@@ -14,7 +14,14 @@ class Main extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={SignUp} />
-                    <Route path="/admin/product" component={Product} />
+                    <Route path="/admin" render={({match: {url}}) => {
+                        return (
+                            <Switch>
+                                <Route path={`${url}/product`} component={Product} />
+                            </Switch>
+                        )
+                        }}
+                    />
                 </Switch>
             </React.Fragment>
         )

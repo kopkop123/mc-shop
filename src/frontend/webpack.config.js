@@ -1,21 +1,25 @@
 var path = require("path");
-//console.log(__dirname)
+// console.log(__dirname)
 module.exports = {
-    entry: "./src/frontend/root.js",
+    entry: "./src/root.js",
+    context: __dirname,
     output: {
-        path: __dirname + '/dist',
-        publicPath: "/dist",
+        path: path.resolve(__dirname + '/dist'),
+        publicPath: "/",
         filename: "build.js"
     },
     mode : 'development',
     devServer: {
         contentBase : path.join(__dirname, '/'),
+        publicPath: '/',
         port : 3000,
+        historyApiFallback: true,
         //inline: true,
-        //hot: true
+        // hot: true
     },
     resolve: {
         extensions: ['.js', '.jsx'],
+        modules: [path.resolve(__dirname), 'node_modules']
     },
     module: {
         rules: [
@@ -66,7 +70,12 @@ module.exports = {
             {
                 test: /\.(jpe?g|gif|png|svg|ttf|eot|woff|woff2)$/,
                 use:[
-                    {loader : 'file-loader'}
+                    {
+                        loader : 'file-loader',
+                        options: {
+                            outputPath: 'build/'
+                        }
+                    }
                 ]
             },
             {
