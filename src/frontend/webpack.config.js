@@ -14,6 +14,9 @@ module.exports = {
         publicPath: '/',
         port : 3000,
         historyApiFallback: true,
+        proxy: {
+            '/api/image': 'hostingurl'
+        }
         //inline: true,
         // hot: true
     },

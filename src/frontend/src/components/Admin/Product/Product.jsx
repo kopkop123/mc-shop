@@ -33,7 +33,7 @@ class Product extends Component {
     componentConfig = {
         iconFiletypes: ['.jpg', '.png', '.gif'],
         showFiletypeIcon: false,
-        postUrl: 'https://photosp.ru/api/1/upload/'
+        postUrl: '/api/image'
     }
 
     render() {
