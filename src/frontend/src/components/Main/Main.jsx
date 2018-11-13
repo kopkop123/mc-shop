@@ -5,6 +5,8 @@ import Login from '../Login/Login'
 import SignUp from '../SignUp/SignUp'
 import Home from '../Home/Home'
 import Product from  '../Admin/Product/Product'
+import Shop from '../Shop/Shop'
+import ShopItemDetail from "../Shop/ShopItemDetail/ShopItemDetail";
 
 class Main extends Component {
     render() {
@@ -14,6 +16,8 @@ class Main extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={SignUp} />
+                    <Route path="/shop/:name" component={ShopItemDetail} />
+                    <Route path="/shop" component={Shop} />
                     <Route path="/admin" render={({match: {url}}) => {
                         return (
                             <Switch>
