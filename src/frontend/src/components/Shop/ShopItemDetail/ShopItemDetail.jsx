@@ -2,35 +2,64 @@ import React, { Component } from 'react'
 import product from '../ShopItem/img/product.jpg'
 
 class ShopItemDetail extends Component {
-    render() {
-        // localStorage.clear()
+    addToBasket = () => {
         let name = this.props.match.params.name
-        function addToBasket() {
-            if(localStorage.getItem('basket')) {
-                let goods = JSON.parse(localStorage.getItem("basket"))
-                let checkName = false
+        if(localStorage.getItem('basket')) {
+            let goods = JSON.parse(localStorage.getItem("basket"))
+            let checkName = false
 
-                for(let i = 0; i < goods.length; i++) {
-                    if(goods[i].name === name) {
-                        checkName = true
-                        break
-                    }
+            for(let i = 0; i < goods.length; i++) {
+                if(goods[i].name === name) {
+                    checkName = true
+                    break
                 }
+            }
 
-                if(!checkName) {
-                    goods.push({name: name})
-                    localStorage.setItem("basket", JSON.stringify(goods))
-                }
-            } else {
-                let goods = [
-                    {
-                        name: name
-                    }
-                ]
-
+            if(!checkName) {
+                goods.push({name: name})
                 localStorage.setItem("basket", JSON.stringify(goods))
             }
+        } else {
+            let goods = [
+                {
+                    name: name
+                }
+            ]
+
+            localStorage.setItem("basket", JSON.stringify(goods))
         }
+        // localStorage.clear()
+    }
+
+    render() {
+        // // localStorage.clear()
+        // let name = this.props.match.params.name
+        // function addToBasket() {
+        //     if(localStorage.getItem('basket')) {
+        //         let goods = JSON.parse(localStorage.getItem("basket"))
+        //         let checkName = false
+        //
+        //         for(let i = 0; i < goods.length; i++) {
+        //             if(goods[i].name === name) {
+        //                 checkName = true
+        //                 break
+        //             }
+        //         }
+        //
+        //         if(!checkName) {
+        //             goods.push({name: name})
+        //             localStorage.setItem("basket", JSON.stringify(goods))
+        //         }
+        //     } else {
+        //         let goods = [
+        //             {
+        //                 name: name
+        //             }
+        //         ]
+        //
+        //         localStorage.setItem("basket", JSON.stringify(goods))
+        //     }
+        // }
 
         return (
             <div className="container">
@@ -48,7 +77,7 @@ class ShopItemDetail extends Component {
                             className="shop-item-detail__button"
                             type="submit"
                             value="Add to cart"
-                            onClick={addToBasket}
+                            onClick={this.addToBasket}
                         />
                     </div>
                 </div>

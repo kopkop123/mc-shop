@@ -51,6 +51,8 @@ class Header extends Component {
                             <NavLink to="/login" className="service-navigation__link"><FontAwesomeIcon icon="user" />Login</NavLink>
                             <NavLink to="/admin/product" className="service-navigation__link">Product</NavLink>
                             <NavLink to="/shop" className="service-navigation__link">Shop</NavLink>
+                            <NavLink to="/cart" className="service-navigation__link">Cart</NavLink>
+                            <NavLink to="/checkout" className="service-navigation__link">Checkout</NavLink>
                         </nav>
                     </div>
 
