@@ -19,6 +19,8 @@ class ShopItemDetail extends Component {
     }
 
     render() {
+        const { name, price} = this.props.match.params
+
         return (
             <div className="container">
                 <div className="shop-item-detail">
@@ -27,9 +29,9 @@ class ShopItemDetail extends Component {
                     <div className="shop-item-detail__details">
                         <h3 className="shop-item-detail__brand">Raw Trader</h3>
 
-                        <h1 className="shop-item-detail__title">{this.props.match.params.name}</h1>
+                        <h1 className="shop-item-detail__title">{name}</h1>
 
-                        <p className="shop-item-detail__price">{this.props.match.params.price} Почему-то не выводится цена</p>
+                        <p className="shop-item-detail__price">{price} Почему-то не выводится цена</p>
 
                         <input
                             className="shop-item-detail__button"
