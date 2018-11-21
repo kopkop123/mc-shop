@@ -4,63 +4,21 @@ import product from '../ShopItem/img/product.jpg'
 class ShopItemDetail extends Component {
     addToBasket = () => {
         let name = this.props.match.params.name
-        if(localStorage.getItem('basket')) {
-            let goods = JSON.parse(localStorage.getItem("basket"))
-            let checkName = false
 
-            for(let i = 0; i < goods.length; i++) {
-                if(goods[i].name === name) {
-                    checkName = true
-                    break
-                }
-            }
+        const goodsRaw = localStorage.getItem("basket")
+        const goods = goodsRaw ? JSON.parse(goodsRaw) : []
+        const good = goods.find(g => g.name === name)
 
-            if(!checkName) {
-                goods.push({name: name})
-                localStorage.setItem("basket", JSON.stringify(goods))
-            }
+        if(good) {
+            good.number += 1
         } else {
-            let goods = [
-                {
-                    name: name
-                }
-            ]
-
-            localStorage.setItem("basket", JSON.stringify(goods))
+            goods.push({ name, number: 1 })
         }
-        // localStorage.clear()
+
+        localStorage.setItem("basket", JSON.stringify(goods))
     }
 
     render() {
-        // // localStorage.clear()
-        // let name = this.props.match.params.name
-        // function addToBasket() {
-        //     if(localStorage.getItem('basket')) {
-        //         let goods = JSON.parse(localStorage.getItem("basket"))
-        //         let checkName = false
-        //
-        //         for(let i = 0; i < goods.length; i++) {
-        //             if(goods[i].name === name) {
-        //                 checkName = true
-        //                 break
-        //             }
-        //         }
-        //
-        //         if(!checkName) {
-        //             goods.push({name: name})
-        //             localStorage.setItem("basket", JSON.stringify(goods))
-        //         }
-        //     } else {
-        //         let goods = [
-        //             {
-        //                 name: name
-        //             }
-        //         ]
-        //
-        //         localStorage.setItem("basket", JSON.stringify(goods))
-        //     }
-        // }
-
         return (
             <div className="container">
                 <div className="shop-item-detail">
